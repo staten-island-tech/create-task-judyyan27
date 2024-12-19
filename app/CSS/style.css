@@ -1,0 +1,119 @@
+html,
+body,
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 10px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+p,
+form,
+button {
+  font-family: "Mochiy Pop One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  text-align: center;
+}
+
+:root {
+  --h1: 3.815rem;
+  --h2: 2.852rem;
+  --h3: 2.441rem;
+  --h4: 1.953rem;
+  --h5: 1.563rem;
+  --h6: 1.25rem;
+}
+
+.selection {
+  text-align: center;
+}
+
+h1 {
+  font-size: 3.815rem;
+}
+h2 {
+  font-size: 2.852rem;
+}
+h3 {
+  font-size: 2.441rem;
+}
+h4 {
+  font-size: 1.953rem;
+}
+h5 {
+  font-size: 1.563rem;
+}
+
+.character-card {
+  border-radius: 1.5rem;
+  border-width: 1rem;
+  width: 37rem;
+  height: 67rem;
+  margin: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  border: 1.5rem groove;
+  border-color: rgb(139, 82, 44);
+}
+
+.book-card {
+  border-radius: 1.5rem;
+  border-width: 1rem;
+  width: 37rem;
+  height: 120rem;
+  margin: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  border: 1.5rem groove;
+  border-color: rgb(50, 44, 139);
+}
+
+.spell-card {
+  border-radius: 1.5rem;
+  border-width: 1rem;
+  width: 37rem;
+  height: 22rem;
+  margin: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  border: 1.5rem groove;
+  border-color: rgb(139, 44, 118);
+}
+
+
+button:hover {
+  scale: 90%;
+  filter: drop-shadow(0 0 0.75rem rgb(211, 211, 211));
+}
+
+button {
+  padding: 0.3rem;
+  margin: 0.2rem;
+  border-radius: 1.5rem;
+}
+
+.card-img {
+  height: 40rem;
+  width: 30rem;
+  object-fit: contain;
+  margin: 0.3rem;
+}
+
+.card-name,
+.card-desc,
+.card-price {
+  font-size: 2rem;
+  margin: 0.2rem;
+}
