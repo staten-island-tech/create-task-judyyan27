@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vite App</title>
-    <link rel="stylesheet" href="" />
+    <link rel="stylesheet" href="style.css" />
     <link
       href="https://fonts.googleapis.com/css2?family=Mochiy+Pop+One&display=swap"
       rel="stylesheet"
@@ -12,17 +12,22 @@
   </head>
   <body>
     <div class="website_title">
-      <h1>Bootleg Spin the Wheel Random Selector</h1>
+      <h1>Random Selector</h1>
     </div>
     <div id="input">
       <form action="">
         <label for="name">Type your each input of your choice and submit:</label
         ><input type="text" name="info" id="user_input" />
-        <button id="input_button" type="submit">Submit ☜(ﾟヮﾟ☜)</button>
+        <button class="input_button" type="submit">Submit ☜(ﾟヮﾟ☜)</button>
       </form>
     </div>
 
-    <div class="container-box"></div>
+    <div id="container-box">
+      <!--  <div class="card">
+        <h1 class="card-title">${name}</h1>
+        <button type="remove" class="remove">Remove</button>
+      </div> -->
+    </div>
 
     <script type="module" src="JS/main.js"></script>
   </body>

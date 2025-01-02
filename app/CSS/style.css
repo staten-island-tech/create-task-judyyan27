@@ -50,35 +50,18 @@ h5 {
   font-size: 1.563rem;
 }
 
-.character-card {
-  border-radius: 1.5rem;
-  border-width: 1rem;
-  width: 37rem;
-  height: 67rem;
-  margin: 1rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-evenly;
-  border: 1.5rem groove;
-  border-color: rgb(139, 82, 44);
+#container-box{
+    margin: auto;
+    size: 100%;
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: row;
 }
 
-.book-card {
-  border-radius: 1.5rem;
-  border-width: 1rem;
-  width: 37rem;
-  height: 120rem;
-  margin: 1rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-evenly;
-  border: 1.5rem groove;
-  border-color: rgb(50, 44, 139);
-}
-
-.spell-card {
+.card {
   border-radius: 1.5rem;
   border-width: 1rem;
   width: 37rem;
@@ -104,16 +87,9 @@ button {
   border-radius: 1.5rem;
 }
 
-.card-img {
-  height: 40rem;
-  width: 30rem;
-  object-fit: contain;
-  margin: 0.3rem;
-}
 
 .card-name,
 .card-desc,
 .card-price {
   font-size: 2rem;
-  margin: 0.2rem;
 }
