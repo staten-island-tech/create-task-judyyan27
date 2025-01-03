@@ -19,6 +19,7 @@ button {
   font-weight: 400;
   font-style: normal;
   text-align: center;
+  align-items: center;
 }
 
 :root {
@@ -50,6 +51,12 @@ h5 {
   font-size: 1.563rem;
 }
 
+label{
+    font-size: 2rem;
+}
+
+
+
 #container-box{
     margin: auto;
     size: 100%;
@@ -64,8 +71,8 @@ h5 {
 .card {
   border-radius: 1.5rem;
   border-width: 1rem;
-  width: 37rem;
-  height: 22rem;
+  width: fit-content;
+  height: fit-content;
   margin: 1rem;
   display: flex;
   flex-direction: column;
@@ -75,21 +82,32 @@ h5 {
   border-color: rgb(139, 44, 118);
 }
 
-
 button:hover {
   scale: 90%;
   filter: drop-shadow(0 0 0.75rem rgb(211, 211, 211));
 }
 
-button {
-  padding: 0.3rem;
-  margin: 0.2rem;
-  border-radius: 1.5rem;
+#activate_random{
+    text-align: center;
+    margin: 2rem;
 }
 
 
-.card-name,
-.card-desc,
-.card-price {
+.input_button, .activate, input {
+  padding: 0.3rem;
+  margin: 0.2rem;
+  border-radius: 1.5rem;
+  font-size: 2rem;
+  size: 2rem;
+}
+
+.remove {
+    padding: 0.3rem;
+    margin: 0.2rem;
+    border-radius: 1.5rem;
+    font-size:1.5rem;
+}
+
+.card-name{
   font-size: 2rem;
 }
