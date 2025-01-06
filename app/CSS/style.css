@@ -78,13 +78,13 @@ label{
   flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
-  border: 1.5rem groove;
-  border-color: rgb(139, 44, 118);
+  border: 1.2rem groove;
+  border-color: black;
 }
 
 button:hover {
   scale: 90%;
-  filter: drop-shadow(0 0 0.75rem rgb(211, 211, 211));
+  filter: drop-shadow(0 0 0.75rem rgb(181, 181, 181));
 }
 
 #activate_random{
@@ -110,4 +110,5 @@ button:hover {
 
 .card-name{
   font-size: 2rem;
+  line-height: 3rem;
 }

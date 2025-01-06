@@ -8,7 +8,9 @@ const DOMSelectors = {
   input_button: document.querySelector(`.input_button`),
 
   activate_button: document.querySelector(`.activate_button`),
-   /* clearall_inputs: document.querySelector(`#`),*/
+
+  history: document.querySelector(`.history`),
+  /* clearall_inputs: document.querySelector(`#`),*/
 };
 
 var inputs = [];
@@ -39,11 +41,36 @@ DOMSelectors.input_button.addEventListener("click", function (event) {
   });
 });
 
-// ALGORITHM HERE:
-
 DOMSelectors.activate_button.addEventListener("click", function (event) {
   event.preventDefault();
 
-  for
+  let numitems = inputs.length;
+  let chosen = Math.floor(Math.random() * numitems);
+  DOMSelectors.container.innerHTML = "";
 
-}
+  DOMSelectors.container.forEach((el) => (el.style.color = "red"));
+
+  DOMSelectors.container.insertAdjacentHTML(
+    "beforeend",
+    `<div class="card">
+        <h1 class="card-title">${input[chosen]}</h1> 
+        <button type="remove" class="remove">Remove</button>
+      </div>`
+  );
+});
+
+/*   for (let i = 0; i < inputs.length; i++) {
+    DOMSelectors.container.insertAdjacentHTML(
+      "beforeend",
+      `<div class="card">
+          <h1 class="card-title">${input[chosen]}</h1> 
+          <button type="remove" class="remove">Remove</button>
+        </div>`
+    );
+  }
+ */
+
+//** Algorithm Plan */
+// while the random button is pressed: document.history.textContent = previously_chosen
+// items.forEach((el) => (el.style.color = "red")); (make each card animate with different colors)
+// catches if there are no objects on screen then prints "There are no items to randomly select"
