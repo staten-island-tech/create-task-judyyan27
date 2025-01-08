@@ -55,8 +55,6 @@ label{
     font-size: 2rem;
 }
 
-
-
 #container-box{
     margin: auto;
     size: 100%;
@@ -92,13 +90,18 @@ button:hover {
     margin: 2rem;
 }
 
+.clear_input{
+    align-self: center;
+}
 
-.input_button, .activate, input {
+.input_button, .activate, .clear_input, input {
   padding: 0.3rem;
   margin: 0.2rem;
   border-radius: 1.5rem;
   font-size: 2rem;
   size: 2rem;
+  align-self: center;
+  text-align: center;
 }
 
 .remove {

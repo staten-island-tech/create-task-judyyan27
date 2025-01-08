@@ -9,6 +9,7 @@ const DOMSelectors = {
   input_button: document.querySelector(`.input_button`),
 
   activate_button: document.querySelector(`.activate_button`),
+  return_button: document.querySelector(`.return`),
 
   history: document.querySelector(`.history`),
   clearall_inputs: document.querySelector(`.clear_input`),
@@ -58,10 +59,24 @@ DOMSelectors.activate_button.addEventListener("click", function (event) {
       DOMSelectors.container.insertAdjacentHTML(
         "beforeend",
         `<div class="card">
-                <h1 class="card-title">${input[i]}</h1> 
+                <h1 class="card-title">${inputs[i]}</h1> 
                 <button type="remove" class="remove">Remove</button>
+                <button type="remove" class="return">Return</button>
               </div>`
       );
+
+      DOMSelectors.return_button.addEventListener("click", function (event) {
+        const input = DOMSelectors.user_input.value;
+        DOMSelectors.container.insertAdjacentHTML(
+          "beforeend",
+          `<div class="card">
+              <h1 class="card-title">${input}</h1> 
+              <button type="remove" class="remove">Remove</button>
+            </div>`
+        );
+      });
+    } else if (inputs.length === 0) {
+      DOMSelectors.container.innerHTML = `<h2 class=text>There are currently no inputs. Add inputs before choosing random object</h2>`;
     }
   }
 });
