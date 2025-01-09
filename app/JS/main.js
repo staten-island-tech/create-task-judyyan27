@@ -8,6 +8,7 @@ const DOMSelectors = {
   user_input: document.querySelector(`#user_input`),
   input_button: document.querySelector(`.input_button`),
 
+  user_activate: document.querySelector(`#user_activate`),
   activate_button: document.querySelector(`.activate_button`),
   return_button: document.querySelector(`.return`),
 
@@ -47,10 +48,18 @@ DOMSelectors.input_button.addEventListener("click", function (event) {
   remove_button();
 });
 
+function choose_items(times) {
+  for (let i = 0; i < times; i++) {
+    let chosen = Math.floor(Math.random() * numitems);
+    DOMSelectors.container.innerHTML = "";
+  }
+}
+
 DOMSelectors.activate_button.addEventListener("click", function (event) {
   event.preventDefault();
 
   let numitems = inputs.length;
+
   let chosen = Math.floor(Math.random() * numitems);
   DOMSelectors.container.innerHTML = "";
 
@@ -93,6 +102,8 @@ DOMSelectors.activate_button.addEventListener("click", function (event) {
  */
 
 //** Algorithm Plan */
-// while the random button is pressed: document.history.textContent = previously_chosen
+// while the random button is clicked: document.history.textContent = previously_chosen (append chosen object)
+// also give option to pick multiple random objects
 // items.forEach((el) => (el.style.color = "red")); (make each card animate with different colors)
 // catches if there are no objects on screen then prints "There are no items to randomly select"
+//
