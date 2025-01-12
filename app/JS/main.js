@@ -33,18 +33,23 @@ DOMSelectors.input_button.addEventListener("click", function (event) {
   event.preventDefault();
 
   const input = DOMSelectors.user_input.value;
-  inputs.push(input);
-  console.log(inputs);
+  if (input === "") {
+    DOMSelectors.container.innerHTML = `<h2 class=text>Please write an input before submitting.</h2>`;
+    DOMSelectors.user_input.value = "";
+  } else {
+    inputs.push(input);
+    console.log(inputs);
 
-  DOMSelectors.container.insertAdjacentHTML(
-    "beforeend",
-    `<div class="card">
+    DOMSelectors.container.insertAdjacentHTML(
+      "beforeend",
+      `<div class="card">
         <h1 class="card-title">${input}</h1> 
         <button type="remove" class="remove">Remove</button>
       </div>`
-  );
-  DOMSelectors.user_input.value = "";
-  remove_button();
+    );
+    DOMSelectors.user_input.value = "";
+    remove_button();
+  }
 });
 
 DOMSelectors.return_button.addEventListener("click", function (event) {
