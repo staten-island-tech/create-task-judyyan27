@@ -78,6 +78,10 @@ function random_selector(times) {
     than the total number of inputs --(${inputs.length}).</h2>`;
     DOMSelectors.user_activate.value = "";
     return;
+  } else if (times === 0 || times === "") {
+    DOMSelectors.container.innerHTML = `<h2 class=text>Please input a number greater than 0.</h2>`;
+    DOMSelectors.user_activate.value = "";
+    return;
   } else {
     let numitems = inputs.length;
     DOMSelectors.container.innerHTML = "";
