@@ -62,16 +62,15 @@ DOMSelectors.return_button.addEventListener("click", function (event) {
   remove_button();
 });
 
-DOMSelectors.activate_button.addEventListener("click", function (event) {
-  event.preventDefault();
-  let times = parseInt(DOMSelectors.user_activate.value);
-
+function random_selector(times) {
   if (inputs.length === 0) {
-    DOMSelectors.container.innerHTML = `<h2 class=text>There are currently no inputs. Add inputs before choosing random object(s)</h2>`;
+    DOMSelectors.container.innerHTML = `<h2 class=text>There are currently no inputs. 
+    Add inputs before choosing random object(s)</h2>`;
     DOMSelectors.user_activate.value = "";
     return;
   } else if (times > inputs.length) {
-    DOMSelectors.container.innerHTML = `<h2 class=text>Cannot pick more items than the total number of inputs --(${inputs.length}).</h2>`;
+    DOMSelectors.container.innerHTML = `<h2 class=text>Cannot pick more items 
+    than the total number of inputs --(${inputs.length}).</h2>`;
     DOMSelectors.user_activate.value = "";
     return;
   } else {
@@ -103,4 +102,10 @@ DOMSelectors.activate_button.addEventListener("click", function (event) {
     remove_button();
     DOMSelectors.user_activate.value = "";
   }
+}
+
+DOMSelectors.activate_button.addEventListener("click", function (event) {
+  event.preventDefault();
+  let times = parseInt(DOMSelectors.user_activate.value);
+  random_selector(times);
 });
