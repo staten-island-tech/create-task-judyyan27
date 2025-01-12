@@ -51,8 +51,29 @@ h5 {
   font-size: 1.563rem;
 }
 
-label{
+label, button{
     font-size: 2rem;
+}
+
+.website_title{
+  color:rgb(53, 74, 114);
+}
+
+.input_button, .clear_input, .activate_button, .history{
+  background-color: rgb(255, 255, 255);
+}
+
+#input, .clear_input, .input_button{
+  color:rgb(93, 67, 146);
+  
+}
+
+#activate_random, .activate_button{
+  color:rgb(67, 127, 129);
+}
+
+#technical, .return{
+  color:royalblue;
 }
 
 #container-box{
@@ -76,7 +97,7 @@ label{
   flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
-  border: 1.2rem groove;
+  border: 1rem groove;
   border-color: black;
 }
 
