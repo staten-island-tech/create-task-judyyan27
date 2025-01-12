@@ -19,8 +19,8 @@ var inputs = [];
 function remove_button() {
   document.querySelectorAll(".remove").forEach((button) => {
     button.addEventListener("click", () => {
-      const card = button.parentElement; // Get the parent card of the button
-      const cardTitle = card.querySelector(".card-title").textContent; // Get the title from the card
+      const card = button.parentElement;
+      const cardTitle = card.querySelector(".card-title").textContent;
       card.remove();
 
       inputs = inputs.filter((item) => item !== cardTitle);
@@ -60,12 +60,11 @@ DOMSelectors.return_button.addEventListener("click", function (event) {
     )
   );
   remove_button();
-  return inputs;
 });
 
 DOMSelectors.activate_button.addEventListener("click", function (event) {
   event.preventDefault();
-  let times = DOMSelectors.user_activate.value;
+  let times = parseInt(DOMSelectors.user_activate.value);
 
   if (inputs.length === 0) {
     DOMSelectors.container.innerHTML = `<h2 class=text>There are currently no inputs. Add inputs before choosing random object(s)</h2>`;
@@ -76,7 +75,6 @@ DOMSelectors.activate_button.addEventListener("click", function (event) {
     DOMSelectors.user_activate.value = "";
     return;
   } else {
-    let times = parseInt(DOMSelectors.user_activate.value);
     let numitems = inputs.length;
     DOMSelectors.container.innerHTML = "";
 
@@ -96,7 +94,7 @@ DOMSelectors.activate_button.addEventListener("click", function (event) {
     chosen_objects.forEach((object) => {
       DOMSelectors.container.insertAdjacentHTML(
         "beforeend",
-        `<div class="card">
+        `<div class="card-chosen">
           <h1 class="card-title">${inputs[object]}</h1> 
           <button type="remove" class="remove">Remove</button>
         </div>`

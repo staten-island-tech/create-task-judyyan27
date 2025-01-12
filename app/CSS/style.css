@@ -74,12 +74,11 @@ label, button{
 
 #technical, .return{
   color:royalblue;
+  size: 2.5rem;
 }
 
 #container-box{
     margin: auto;
-    size: 100%;
-
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
@@ -101,6 +100,19 @@ label, button{
   border-color: black;
 }
 
+.card-chosen{
+  border-radius: 1.5rem;
+  border-width: 1rem;
+  width: fit-content;
+  height: fit-content;
+  margin: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  border: 1rem groove;
+  border-color:midnightblue;
+}
 button:hover {
   scale: 90%;
   filter: drop-shadow(0 0 0.75rem rgb(181, 181, 181));
@@ -125,6 +137,9 @@ button:hover {
   text-align: center;
 }
 
+.return{
+  font-size: 2.5rem;
+}
 .remove {
     padding: 0.3rem;
     margin: 0.2rem;
