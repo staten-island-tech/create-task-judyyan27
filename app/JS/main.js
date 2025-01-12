@@ -79,7 +79,8 @@ function random_selector(times) {
     DOMSelectors.user_activate.value = "";
     return;
   } else if (times === 0 || times === "") {
-    DOMSelectors.container.innerHTML = `<h2 class=text>Please input a number greater than 0.</h2>`;
+    DOMSelectors.container.innerHTML = `<h2 class=text>Please input a number 
+    greater than 0.</h2>`;
     DOMSelectors.user_activate.value = "";
     return;
   } else {
