@@ -34,12 +34,12 @@ DOMSelectors.input_button.addEventListener("click", function (event) {
 
   const input = DOMSelectors.user_input.value;
   if (input === "") {
-    DOMSelectors.container.innerHTML = `<h2 class=text>Please write an input before submitting.</h2>`;
+    DOMSelectors.container.innerHTML = `<h2 class=text>Please write 
+    an input before submitting.</h2>`;
     DOMSelectors.user_input.value = "";
   } else {
     inputs.push(input);
     console.log(inputs);
-
     DOMSelectors.container.insertAdjacentHTML(
       "beforeend",
       `<div class="card">
