@@ -14,7 +14,7 @@ h4,
 h5,
 p,
 form,
-button {
+button, #activate_random {
   font-family: "Mochiy Pop One", sans-serif;
   font-weight: 400;
   font-style: normal;

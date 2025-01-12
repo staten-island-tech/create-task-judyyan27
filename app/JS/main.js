@@ -11,9 +11,9 @@ const DOMSelectors = {
   user_activate: document.querySelector(`#user_activate`),
   activate_button: document.querySelector(`.activate_button`),
   return_button: document.querySelector(`.return`),
+  clear_button: document.querySelector(`.clear_input`),
 
   history: document.querySelector(`.history`),
-  clearall_inputs: document.querySelector(`.clear_input`),
 };
 
 function remove_button() {
@@ -49,61 +49,46 @@ DOMSelectors.input_button.addEventListener("click", function (event) {
 });
 
 function choose_items(times) {
+  let numitems = inputs.length;
+
   for (let i = 0; i < times; i++) {
     let chosen = Math.floor(Math.random() * numitems);
     DOMSelectors.container.innerHTML = "";
+    for (let i = 0; i < inputs.length; i++) {
+      if (i === chosen) {
+        DOMSelectors.container.insertAdjacentHTML(
+          "beforeend",
+          `<div class="card">
+                  <h1 class="card-title">${inputs[i]}</h1> 
+                  <button type="remove" class="remove">Remove</button>
+                  <button type="remove" class="return">Return</button>
+                </div>`
+        );
+      }
+    }
+    remove_button();
   }
 }
 
 DOMSelectors.activate_button.addEventListener("click", function (event) {
   event.preventDefault();
 
-  let numitems = inputs.length;
+  if (inputs.length === 0) {
+    DOMSelectors.container.innerHTML = `<h2 class=text>There are currently no inputs. Add inputs before choosing random object</h2>`;
+  } else {
+    let times = DOMSelectors.user_activate.value;
+    choose_items(times);
 
-  let chosen = Math.floor(Math.random() * numitems);
-  DOMSelectors.container.innerHTML = "";
-
-  for (let i = 0; i < inputs.length; i++) {
-    if (i === chosen) {
-      DOMSelectors.container.insertAdjacentHTML(
-        "beforeend",
-        `<div class="card">
-                <h1 class="card-title">${inputs[i]}</h1> 
-                <button type="remove" class="remove">Remove</button>
-                <button type="remove" class="return">Return</button>
-              </div>`
-      );
-
-      DOMSelectors.return_button.addEventListener("click", function (event) {
-        const input = DOMSelectors.user_input.value;
+    DOMSelectors.return_button.addEventListener("click", function (event) {
+      inputs.forEach((object) =>
         DOMSelectors.container.insertAdjacentHTML(
           "beforeend",
           `<div class="card">
-              <h1 class="card-title">${input}</h1> 
-              <button type="remove" class="remove">Remove</button>
-            </div>`
-        );
-      });
-    } else if (inputs.length === 0) {
-      DOMSelectors.container.innerHTML = `<h2 class=text>There are currently no inputs. Add inputs before choosing random object</h2>`;
-    }
+            <h1 class="card-title">${object}</h1> 
+            <button type="remove" class="remove">Remove</button>
+          </div>`
+        )
+      );
+    });
   }
 });
-
-/*   for (let i = 0; i < inputs.length; i++) {
-    DOMSelectors.container.insertAdjacentHTML(
-      "beforeend",
-      `<div class="card">
-          <h1 class="card-title">${input[chosen]}</h1> 
-          <button type="remove" class="remove">Remove</button>
-        </div>`
-    );
-  }
- */
-
-//** Algorithm Plan */
-// while the random button is clicked: document.history.textContent = previously_chosen (append chosen object)
-// also give option to pick multiple random objects
-// items.forEach((el) => (el.style.color = "red")); (make each card animate with different colors)
-// catches if there are no objects on screen then prints "There are no items to randomly select"
-//
